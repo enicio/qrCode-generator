@@ -1,0 +1,17 @@
+org: enicio
+app: qr-gen2
+service: qr-fun-gen
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  qrgen:
+    handler: handler.qrgen
+    events:
+      - http:
+          path: qrcode
+          method: get
